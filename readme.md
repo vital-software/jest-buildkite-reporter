@@ -1,13 +1,10 @@
-# Jest Buildkite reporter
+# Jest Buildkite Reporter [![CI](https://github.com/vbfox/jest-buildkite-reporter/workflows/CI/badge.svg)](https://github.com/vbfox/jest-buildkite-reporter/actions?query=workflow%3ACI) [![npm](https://img.shields.io/npm/v/jest-buildkite-reporter)](https://www.npmjs.com/package/jest-buildkite-reporter)
 
-[![CI](https://github.com/vbfox/jest-buildkite-reporter/workflows/CI/badge.svg)](https://github.com/vbfox/jest-buildkite-reporter/actions?query=workflow%3ACI)
-[![npm](https://img.shields.io/npm/v/jest-buildkite-reporter)](https://www.npmjs.com/package/jest-buildkite-reporter)
-
-Report Jest test results in [Buildkite](https://buildkite.com/) output as annotations
+Report Jest test results in [Buildkite](https://buildkite.com/) output as Annotations.
 
 ## Usage
 
-Install the package :
+Install the package:
 
 ```bash
 npm install -D jest-buildkite-reporter
@@ -15,13 +12,11 @@ npm install -D jest-buildkite-reporter
 yarn add -D jest-buildkite-reporter
 ```
 
-Add it your jest reporters. If you don't have any reporters
-you should also add the `default` one or you will lose
-the console output.
+Add it your Jest `reporters` configuration. If you don't have any reporters you should also add the `default` one or you will lose the console output.
 
 ```javascript
 module.exports = {
-    reporters: ['default', 'jest-buildkite-reporter'],
+  reporters: ["default", "jest-buildkite-reporter"],
 };
 ```
 
@@ -54,7 +49,7 @@ This project is using the [MIT](LICENSE) license.
 
 ## Similar projects
 
-* [junit-annotate-buildkite-plugin](https://github.com/buildkite-plugins/junit-annotate-buildkite-plugin) Official Buildkite plugin for JUnit
-* [jest-teamcity-reporter](https://github.com/winterbe/jest-teamcity-reporter) Jest reporter for TeamCity
-* [jest-teamcity](https://github.com/itereshchenkov/jest-teamcity) Another Jest reporter for TeamCity
-* [bugcrowd-test-summary-buildkite-plugin](https://github.com/bugcrowd/test-summary-buildkite-plugin) BugCrowd reporter for BuildKite
+- [junit-annotate-buildkite-plugin](https://github.com/buildkite-plugins/junit-annotate-buildkite-plugin) Official Buildkite plugin for JUnit
+- [jest-teamcity-reporter](https://github.com/winterbe/jest-teamcity-reporter) Jest reporter for TeamCity
+- [jest-teamcity](https://github.com/itereshchenkov/jest-teamcity) Another Jest reporter for TeamCity
+- [bugcrowd-test-summary-buildkite-plugin](https://github.com/bugcrowd/test-summary-buildkite-plugin) BugCrowd reporter for BuildKite
