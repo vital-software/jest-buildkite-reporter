@@ -6,24 +6,6 @@
   "repository": "https://github.com/vbfox/jest-buildkite-reporter",
   "author": "Julien Roncaglia <julien@roncaglia.fr>",
   "license": "MIT",
-  "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "@types/lodash": "^4.14.149",
-    "@types/node": "^13.11.1",
-    "jest": "^25.3.0",
-    "ts-jest": "^25.3.1",
-    "typescript": "^3.7.2"
-  },
-  "scripts": {
-    "build": "yarn tsc",
-    "test-success": "yarn build && yarn jest --config jest_success.config.js",
-    "test-failure": "yarn build && yarn jest --config jest_failure.config.js",
-    "test-no-tests": "yarn build && yarn jest --config jest_no_tests.config.js",
-    "test-no-tests-but-ok": "yarn build && yarn jest --passWithNoTests --config jest_no_tests_but_ok.config.js",
-    "prepublishOnly": "yarn build",
-    "preversion": "yarn build",
-    "postversion": "git push && git push --tags"
-  },
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts"
@@ -36,12 +18,30 @@
     "jest",
     "ci"
   ],
-  "peerDependencies": {
-    "jest": "^24.0 || ^25.0 || ^26.0"
+  "scripts": {
+    "build": "yarn tsc",
+    "test-success": "yarn build && yarn jest --config jest_success.config.js",
+    "test-failure": "yarn build && yarn jest --config jest_failure.config.js",
+    "test-no-tests": "yarn build && yarn jest --config jest_no_tests.config.js",
+    "test-no-tests-but-ok": "yarn build && yarn jest --passWithNoTests --config jest_no_tests_but_ok.config.js",
+    "prepublishOnly": "yarn build",
+    "preversion": "yarn build",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "buildkite-agent-node": "^0.0.11-pre.1",
     "humanize-duration-ts": "^2.0.0",
     "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.11.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.7.2"
+  },
+  "peerDependencies": {
+    "jest": "^24.0 || ^25.0 || ^26.0"
   }
 }
