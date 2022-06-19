@@ -1,4 +1,4 @@
-# Jest Buildkite Reporter [![CI](https://github.com/vbfox/jest-buildkite-reporter/workflows/CI/badge.svg)](https://github.com/vbfox/jest-buildkite-reporter/actions?query=workflow%3ACI)
+# Jest Buildkite Reporter [![CI](https://github.com/vital-software/jest-buildkite-reporter/workflows/CI/badge.svg)](https://github.com/vital-software/jest-buildkite-reporter/actions?query=workflow%3ACI)
 
 Report Jest test results in [Buildkite](https://buildkite.com/) output as Annotations.
 
