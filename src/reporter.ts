@@ -19,6 +19,7 @@ function getAnnotationStyle(inProgress: boolean, result: AggregatedResult): Anno
 }
 
 export class JestBuildkiteReporter implements Reporter {
+    private displayName: string[];
     private uniqueKey: string;
     private enabled: boolean;
     private currentPromise: Promise<any> | undefined;
@@ -32,6 +33,8 @@ export class JestBuildkiteReporter implements Reporter {
         this.options = { ...getDefaultOptions(), ...options };
         this.enabled = getBuildkiteEnv().isPresent || this.options.debug;
         this.cwd = process.cwd();
+        this.displayName = [];
+
         if (this.options.verbose === true) {
             console.log('Jest Buildkite reporter is ' + (this.enabled ? 'enabled' : 'disabled'));
             console.log('\tOptions', options)
@@ -48,7 +51,7 @@ export class JestBuildkiteReporter implements Reporter {
             return;
         }
 
-        const body = renderJestStatus(this.cwd, this.status, this.options);
+        const body = renderJestStatus(this.cwd, this.status, this.options, this.displayName);
         const result = this.status.result;
         const style = getAnnotationStyle(this.status.inProgress, result);
 
@@ -135,6 +138,13 @@ export class JestBuildkiteReporter implements Reporter {
         if (!this.enabled) {
             return;
         }
+
+        // Add title from the 'displayName' property
+        contexts.forEach((context) => {
+            if (context.config.displayName?.name) {
+                this.displayName.push(context.config.displayName.name);
+            }
+        });
         
         this.status!.inProgress = false;
         this.status!.result = results;
