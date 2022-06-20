@@ -3,8 +3,7 @@ import { JestStatus, AdditionalTestInfo, emptyAdditionalTestInfo, isSuccessfulRe
 import { renderJestStatus } from './formatter';
 import { getDefaultOptions, ReporterOptions, ResolvedReporterOptions } from './options';
 import { AggregatedResult, TestResult } from '@jest/test-result';
-import { Reporter, ReporterOnStartOptions } from '@jest/reporters'
-import { Context, Test } from '@jest/reporters/build/types';
+import { Reporter, ReporterOnStartOptions, Test, TestContext } from '@jest/reporters'
 import { Config } from '@jest/types';
 
 function getAnnotationStyle(inProgress: boolean, result: AggregatedResult): AnnotationStyle {
@@ -132,7 +131,7 @@ export class JestBuildkiteReporter implements Reporter {
         this.onAnnotationChanged();
     }
 
-    async onRunComplete(contexts: Set<Context>, results: AggregatedResult): Promise<void> {
+    async onRunComplete(contexts: Set<TestContext>, results: AggregatedResult): Promise<void> {
         if (!this.enabled) {
             return;
         }
