@@ -18,6 +18,9 @@
     "jest",
     "ci"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "yarn tsc",
     "test-success": "yarn build && yarn jest --config jest_success.config.js",
