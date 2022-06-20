@@ -146,7 +146,7 @@ function appendTestResult(cwd: string, testResult: TestResult, additional: Addit
     const emoji = testResult.numFailingTests === 0 ? '✅' : '❌';
     const path = formatRelativePath(cwd, testResult.testFilePath);
     builder.appendLine();
-    builder.appendLine(`## ${emoji} ${path}`);
+    builder.appendLine(`#### ${emoji} ${path}`);
     builder.appendLine();
     
     const orderedAssertions = orderBy(testResult.testResults, ['status', 'fullName']);
@@ -163,7 +163,7 @@ function appendRunningTest(cwd: string, path: string, builder: MarkdownBuilder) 
     const relativePath = formatRelativePath(cwd, path);
     const emoji = '🏃‍♀️';
     builder.appendLine();
-    builder.appendLine(`## ${emoji} ${relativePath}`);
+    builder.appendLine(`#### ${emoji} ${relativePath}`);
     builder.appendLine();
 }
 
@@ -188,7 +188,7 @@ export function renderJestStatus(cwd: string, status: JestStatus, options: Resol
     const outputTitle = displayName || options.title;
 
     if (outputTitle) {
-        builder.appendLine(`# ${outputTitle}`);
+        builder.appendLine(`### ${outputTitle}`);
         builder.appendLine();
     }
 
