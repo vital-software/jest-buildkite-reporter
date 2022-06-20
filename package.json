@@ -52,8 +52,8 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "buildkite-agent-node": "0.0.11-pre.1",
-    "humanize-duration-ts": "2.0.0",
+    "buildkite-agent-node": "0.0.11-pre.2",
+    "humanize-duration-ts": "2.1.1",
     "lodash": "4.17.21"
   },
   "devDependencies": {
