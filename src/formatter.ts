@@ -182,11 +182,13 @@ function appendRunningTests(cwd: string, testResults: TestResult[], additionalTe
     }
 }
 
-export function renderJestStatus(cwd: string, status: JestStatus, options: ResolvedReporterOptions) {
+export function renderJestStatus(cwd: string, status: JestStatus, options: ResolvedReporterOptions, displayName: string | null) {
     const builder = new MarkdownBuilder();
 
-    if (options.title) {
-        builder.appendLine(`# ${options.title}`);
+    const outputTitle = displayName || options.title;
+
+    if (outputTitle) {
+        builder.appendLine(`# ${outputTitle}`);
         builder.appendLine();
     }
 

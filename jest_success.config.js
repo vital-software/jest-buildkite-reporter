@@ -1,6 +1,6 @@
 module.exports = {
+    displayName: "Success suite",
     "reporters": ["default", ["<rootDir>/dist/index.js", {
-        title: 'Success suite',
         debug: process.env.NODE_ENV === 'development'
     }]],
     testMatch: [

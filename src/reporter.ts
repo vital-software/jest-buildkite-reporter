@@ -19,6 +19,7 @@ function getAnnotationStyle(inProgress: boolean, result: AggregatedResult): Anno
 }
 
 export class JestBuildkiteReporter implements Reporter {
+    private displayName: string | null;
     private uniqueKey: string;
     private enabled: boolean;
     private currentPromise: Promise<any> | undefined;
@@ -32,6 +33,8 @@ export class JestBuildkiteReporter implements Reporter {
         this.options = { ...getDefaultOptions(), ...options };
         this.enabled = getBuildkiteEnv().isPresent || this.options.debug;
         this.cwd = process.cwd();
+        this.displayName = null;
+
         if (this.options.verbose === true) {
             console.log('Jest Buildkite reporter is ' + (this.enabled ? 'enabled' : 'disabled'));
             console.log('\tOptions', options)
@@ -48,7 +51,7 @@ export class JestBuildkiteReporter implements Reporter {
             return;
         }
 
-        const body = renderJestStatus(this.cwd, this.status, this.options);
+        const body = renderJestStatus(this.cwd, this.status, this.options, this.displayName);
         const result = this.status.result;
         const style = getAnnotationStyle(this.status.inProgress, result);
 
@@ -124,6 +127,9 @@ export class JestBuildkiteReporter implements Reporter {
         if (!this.enabled) {
             return;
         }
+
+        // Add displayName from Jest config
+        this.displayName = test.context.config.displayName?.name ?? null;
 
         // AggregatedResult don't contain running tests
         this.status!.additionalTestInfo.set(test.path, emptyAdditionalTestInfo);
