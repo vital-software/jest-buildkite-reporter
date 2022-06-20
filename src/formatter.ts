@@ -182,16 +182,13 @@ function appendRunningTests(cwd: string, testResults: TestResult[], additionalTe
     }
 }
 
-export function renderJestStatus(cwd: string, status: JestStatus, options: ResolvedReporterOptions, displayName: string[]) {
+export function renderJestStatus(cwd: string, status: JestStatus, options: ResolvedReporterOptions, displayName: string | null) {
     const builder = new MarkdownBuilder();
 
-    console.log(displayName)
+    const outputTitle = displayName || options.title;
 
-    if (displayName.length > 0) {
-        builder.appendLine(`# ${displayName.join(' ,')}`);
-        builder.appendLine();
-    } else if (options.title) {
-        builder.appendLine(`# ${options.title}`);
+    if (outputTitle) {
+        builder.appendLine(`# ${outputTitle}`);
         builder.appendLine();
     }
 
