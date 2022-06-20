@@ -19,7 +19,6 @@ jobs:
         node-version: 16.x
     - run: yarn install
     - run: yarn build
-    - run: yarn pack
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v3
       env:
