@@ -1,5 +1,5 @@
 import { AggregatedResult } from '@jest/test-result';
-import { Test } from '@jest/reporters/build/types';
+import { Test } from '@jest/reporters';
 import { ConsoleBuffer } from '@jest/console';
 
 export interface AdditionalTestInfo {
