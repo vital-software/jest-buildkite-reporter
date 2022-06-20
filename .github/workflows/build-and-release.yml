@@ -32,13 +32,9 @@ jobs:
     #     path: '*.tgz'
 
     - name: Semantic Release
-      # Run semantic-release in "dry run" on branches
-      if: github.ref != 'refs/heads/main'
       uses: cycjimmy/semantic-release-action@v3
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      with:
-        dry_run: true
 
     # - name: Use Node.js ${{ matrix.node-version }}
     #   uses: actions/setup-node@v3
