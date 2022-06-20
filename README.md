@@ -43,6 +43,17 @@ And they need to be passed to the `docker build` command:
 docker build --build-arg BUILDKITE --build-arg BUILDKITE_AGENT_ACCESS_TOKEN --build-arg BUILDKITE_JOB_ID .
 ```
 
+## Authoring
+
+This projects uses [Semantic Release](https://github.com/semantic-release/semantic-release). To publish a new version, ensure you have pushed to the `main` branch,
+and use one of the following commit message types to trigger a release:
+
+| Commit message                                                                                                                                                                                   | Release type               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| `fix(pencil): stop graphite breaking when too much pressure applied`                                                                                                                             | ~~Patch~~ Fix Release      |
+| `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release  |
+| `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release <br /> (Note that the `BREAKING CHANGE: ` token must be in the footer of the commit) |
+
 ## License
 
 This project is using the [MIT](LICENSE) license.

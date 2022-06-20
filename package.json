@@ -1,10 +1,10 @@
 {
-  "name": "jest-buildkite-reporter",
+  "name": "@vital-software/jest-buildkite-reporter",
   "version": "0.2.8",
   "description": "Jest Buildkite reporter",
   "main": "dist/index.js",
-  "repository": "https://github.com/vbfox/jest-buildkite-reporter",
-  "author": "Julien Roncaglia <julien@roncaglia.fr>",
+  "repository": "https://github.com/vital-software/jest-buildkite-reporter",
+  "author": "Vital Engineering <engineering@vitaler.com>",
   "license": "MIT",
   "files": [
     "dist/**/*.js",
@@ -18,6 +18,14 @@
     "jest",
     "ci"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "scripts": {
     "build": "yarn tsc",
     "test-success": "yarn build && yarn jest --config jest_success.config.js",

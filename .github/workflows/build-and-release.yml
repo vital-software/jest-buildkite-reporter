@@ -7,25 +7,20 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-release:
+    name: Build & Release
     runs-on: ubuntu-latest
-
-    # strategy:
-    #   matrix:
-    #     node-version: [14.x, 16.x]
-
     steps:
-    - uses: actions/checkout@v3
-    - if: github.ref != 'refs/heads/main' # run this job only on the main branch
-      run: echo 'This step will only run on main.'
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    # - run: yarn install
-    # - run: yarn build
-    # - run: yarn pack
-    # - name: Upload artifact
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     path: '*.tgz'
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+    - run: yarn install
+    - run: yarn build
+    - run: yarn pack
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
