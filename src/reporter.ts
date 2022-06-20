@@ -141,9 +141,13 @@ export class JestBuildkiteReporter implements Reporter {
 
         // Add title from the 'displayName' property
         contexts.forEach((context) => {
+            console.log('formatting context', context);
+
             if (context.config.displayName?.name) {
                 this.displayName.push(context.config.displayName.name);
             }
+
+            console.log('display', this.displayName)
         });
         
         this.status!.inProgress = false;

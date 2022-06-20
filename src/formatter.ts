@@ -185,6 +185,8 @@ function appendRunningTests(cwd: string, testResults: TestResult[], additionalTe
 export function renderJestStatus(cwd: string, status: JestStatus, options: ResolvedReporterOptions, displayName: string[]) {
     const builder = new MarkdownBuilder();
 
+    console.log(displayName)
+
     if (displayName.length > 0) {
         builder.appendLine(`# ${displayName.join(' ,')}`);
         builder.appendLine();
