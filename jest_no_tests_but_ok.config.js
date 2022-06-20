@@ -1,6 +1,4 @@
 module.exports = {
-    displayName: "YOLO",
-
     "reporters": ["default", ["<rootDir>/dist/index.js", {
         title: 'No tests but ok suite',
         debug: process.env.NODE_ENV === 'development'
