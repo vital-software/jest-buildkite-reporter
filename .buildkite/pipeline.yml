@@ -1,9 +1,25 @@
 steps:
-  - command: "yarn install && yarn test-success"
-    label: "Build Success"
-  - command: "yarn install && yarn test-failure"
-    label: "Build Failure"
-  - command: "yarn install && yarn test-no-tests"
-    label: "Build no tests"
-  - command: "yarn install && yarn test-no-tests-but-ok"
-    label: "Build no tests but ok"
+  - label: ":tick: Success annotation"
+    commands:
+      - yarn install
+      - yarn test-success
+
+  - label: ":x: Failure annotation"
+    commands:
+      - yarn install
+      - yarn test-failure
+    soft_fail:
+      - exit_status: 1
+
+  - label: ":x: Build, no tests"
+    commands:
+      - yarn install
+      - yarn test-no-tests
+    soft_fail:
+      - exit_status: 1
+    
+  - label: ":tick: Build, no tests but ok"
+    commands:
+      - yarn install
+      - yarn test-no-tests-but-ok
+    
