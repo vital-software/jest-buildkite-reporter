@@ -65,6 +65,6 @@
     "typescript": "3.7.2"
   },
   "peerDependencies": {
-    "jest": "^24.0 || ^25.0 || ^26.0"
+    "jest": "^27.0 || ^28.0"
   }
 }
