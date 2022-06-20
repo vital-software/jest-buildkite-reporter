@@ -1,5 +1,5 @@
 steps:
-  - label: ":tick: Success annotation"
+  - label: ":white_tick: Success annotation"
     commands:
       - yarn install
       - yarn test-success
