@@ -1,6 +1,6 @@
 {
   "name": "@vital-software/jest-buildkite-reporter",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Jest Buildkite reporter",
   "main": "dist/index.js",
   "repository": "https://github.com/vital-software/jest-buildkite-reporter",
