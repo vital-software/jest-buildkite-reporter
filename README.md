@@ -1,4 +1,4 @@
-# Jest Buildkite Reporter [![Build & Release](https://github.com/vital-software/jest-buildkite-reporter/actions/workflows/build-and-release.yml/badge.svg?branch=main)](https://github.com/vital-software/jest-buildkite-reporter/actions/workflows/build-and-release.yml) [![Build status](https://badge.buildkite.com/a8851c8af61c24e1b43bc6f028878cef5af43f15130d3db98e.svg?branch=main)](https://buildkite.com/vital/jest-buildkite-reporter?branch=main)
+# Jest Buildkite Reporter [![Build & Release](https://github.com/vital-software/jest-buildkite-reporter/actions/workflows/build-and-release.yml/badge.svg?branch=main)](https://github.com/vital-software/jest-buildkite-reporter/actions/workflows/build-and-release.yml) [![Build status](https://badge.buildkite.com/a8851c8af61c24e1b43bc6f028878cef5af43f15130d3db98e.svg?branch=main)](https://buildkite.com/vital/jest-buildkite-reporter?branch=main) [![npm version](https://badge.fury.io/js/@vital-software%2Fjest-buildkite-reporter.svg)](https://badge.fury.io/js/@vital-software%2Fjest-buildkite-reporter)
 
 Report Jest test results in [Buildkite](https://buildkite.com/) output as Annotations.
 
