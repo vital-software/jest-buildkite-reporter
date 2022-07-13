@@ -18,6 +18,9 @@
     "jest",
     "ci"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "release": {
     "branches": [
       "main"
