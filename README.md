@@ -34,7 +34,7 @@ ARG BUILDKITE
 ARG BUILDKITE_AGENT_ACCESS_TOKEN
 ARG BUILDKITE_JOB_ID
 
-RUN yarn run jest
+RUN yarn jest
 ```
 
 And they need to be passed to the `docker build` command:
